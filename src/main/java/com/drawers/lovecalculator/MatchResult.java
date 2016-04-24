@@ -3,7 +3,7 @@ package com.drawers.lovecalculator;
 /**
  * Created by nishant.pathak on 24/04/16.
  */
-public class MatchResult {
+public class MatchResult implements Response {
 
     /*
      * {

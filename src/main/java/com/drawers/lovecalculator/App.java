@@ -1,5 +1,7 @@
 package com.drawers.lovecalculator;
 
+import com.drawers.lib.DrawersBotString;
+import com.drawers.lib.DrawersBotStringHelp;
 import org.drawers.bot.DrawersClient;
 import org.drawers.bot.dto.DrawersMessage;
 
@@ -12,12 +14,10 @@ public class App extends DrawersClient {
         super(clientId, password);
     }
 
-    private LoveCalculator loveCalculator = new LoveCalculator();
+    static private LoveCalculator loveCalculator = new LoveCalculator();
 
     public static void main(String[] args) throws ClassNotFoundException {
-        // Load all the classes which contains string.
-//        Class.forName(MeaningOperations.class.getName());
- //       System.out.println(DrawersBotStringHelp.getDrawersBotStringHelp().toJsonString());
+        System.out.println(DrawersBotStringHelp.getDrawersBotStringHelp().toJsonString());
 
         if(args.length != 2) {
             System.out.println("Usage: java DictionaryBot <clientId> <password>");
@@ -31,10 +31,11 @@ public class App extends DrawersClient {
 
     @Override
     public DrawersMessage processMessageAndReply(DrawersMessage message) {
-        String [] names = message.getMessage().split(" ");
-        if (names.length != 2) {
-            return new DrawersMessage(message.getSender(), "Please provide two names");
+        try {
+            DrawersBotString drawersBotString = DrawersBotString.fromString(message.getMessage());
+            return new DrawersMessage(message.getSender(), loveCalculator.operate(drawersBotString).toString());
+        } catch (Exception ex) {
+            return new DrawersMessage(message.getSender(), "Something went wrong: " + ex.getLocalizedMessage());
         }
-        return new DrawersMessage(message.getSender(), loveCalculator.calculate(names[0], names[1]).toString());
     }
 }
