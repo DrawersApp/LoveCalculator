@@ -1,9 +1,6 @@
 package com.drawers.lovecalculator;
 
-import com.drawers.lib.BotStringElement;
-import com.drawers.lib.BotStringType;
-import com.drawers.lib.DrawersBotString;
-import com.drawers.lib.DrawersBotStringHelp;
+import com.drawers.lib.*;
 import retrofit.RestAdapter;
 
 import java.util.ArrayList;

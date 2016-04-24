@@ -1,4 +1,4 @@
-package com.drawers.lovecalculator;
+package com.drawers.lib;
 
 import com.google.gson.Gson;
 

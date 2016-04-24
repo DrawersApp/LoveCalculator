@@ -1,6 +1,4 @@
-package com.drawers.lovecalculator;
-
-import com.drawers.lib.DrawersBotString;
+package com.drawers.lib;
 
 /**
  * Created by harshit on 27/1/16.
