@@ -1,9 +1,9 @@
 package com.drawers.lovecalculator;
 
-import com.drawers.lib.DrawersBotString;
-import com.drawers.lib.DrawersBotStringHelp;
 import org.drawers.bot.DrawersClient;
 import org.drawers.bot.dto.DrawersMessage;
+import org.drawers.bot.lib.DrawersBotString;
+import org.drawers.bot.lib.DrawersBotStringHelp;
 
 /**
  * Initializing the bot.
